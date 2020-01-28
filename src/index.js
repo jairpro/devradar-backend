@@ -21,9 +21,9 @@ mongoose.connect(CONNECTION_STR, {
 // libera acesso apenas para a aplicação reactJS local
 //app.use(cors({ origin:  'http://localhost:3000' }));
 //app.use(cors({ origin:  'http://localhost:5000' }));
-app.use(cors({ origin:  REACT_URL }));
+//app.use(cors({ origin:  REACT_URL }));
 // libera acesso externo para todo tipo de aplicação
-//app.use(cors());
+app.use(cors());
 
 app.use(express.json());
 app.use(routes);

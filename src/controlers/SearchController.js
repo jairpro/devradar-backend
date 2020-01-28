@@ -1,8 +1,13 @@
 const Dev = require('../models/Dev');
 const parseStringAsArray = require('../utils/parseStringAsArray');
+//const { REACT_URL } = require('../.env.json');
 
 module.exports = {
   async index(request, response) {
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    //response.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+    //response.setHeader('Access-Control-Allow-Origin', REACT_URL);
+
     const {latitude, longitude, techs} = request.query;
 
     const techsArray = parseStringAsArray(techs);
